@@ -179,6 +179,7 @@ docker run --rm cheese-app-api:local pytest tests/unit/ tests/integration/ -v
 
 # Run with coverage
 docker run --rm cheese-app-api:local pytest tests/unit/ --cov=api --cov-report=term
+# 了解哪些代码被测试覆盖,发现未测试的代码路径
 ```
 
 #### Option 2: Run System Tests
@@ -249,6 +250,15 @@ pre-commit install
 This installs Git hooks that will run automatically before each commit.
 
 ### Run the Hooks
+
+你执行: git commit -m "message"
+    ↓
+Git 触发 pre-commit hook
+    ↓
+自动运行 .pre-commit-config.yaml 中配置的所有检查
+    ↓
+如果检查通过 → 提交成功 ✅
+如果检查失败 → 提交被阻止 ❌
 
 After installation, the hooks will run automatically every time you commit:
 ```bash
