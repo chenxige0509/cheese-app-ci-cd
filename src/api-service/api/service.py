@@ -46,3 +46,10 @@ async def calculate_euclidean_distance(x: float = 1, y: float = 2):
         "distance": result,
         "message": "Euclidean distance calculated successfully",
     }
+
+
+# 123
+
+
+def add_numbers(x: float, y: float):
+    return x + y
