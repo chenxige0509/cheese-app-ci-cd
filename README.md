@@ -260,6 +260,18 @@ Git 触发 pre-commit hook
 如果检查通过 → 提交成功 ✅
 如果检查失败 → 提交被阻止 ❌
 
+缺点⚠️ local hooks only run on the developer's system
+两个开发者 一个上传的code 被检查了没问题，另一个没有安装hook，导致上传的code有问题，
+所以Github 提供了远程的Hook 叫做Actions
+
+Pre-commit Hooks（本地）
+优点：快速、早期发现问题
+缺点：可以绕过，只在本地运行
+GitHub Actions（远程）
+优点：无法绕过，所有代码都会被检查
+缺点：需要 push 后才能检查
+
+
 After installation, the hooks will run automatically every time you commit:
 ```bash
 git commit -m "Your commit message"
